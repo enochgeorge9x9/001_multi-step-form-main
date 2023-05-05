@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-900: hsl(213, 96%, 18%);
+  --primary-800: hsl(213, 93%, 23%);
+  --primary-400: hsl(243, 100%, 62%);
+  --primary-200: hsl(228, 100%, 84%);
+  --primary-100: hsl(206, 94%, 87%);
+  --warning-400: hsl(354, 84%, 57%);
+  --neutral-900: hsl(231, 11%, 63%);
+  --neutral-500: hsl(229, 24%, 87%);
+  --neutral-400: hsl(217, 100%, 97%);
+  --neutral-200: hsl(231, 100%, 99%);
+  --neutral-100: hsl(0, 0%, 100%);
+  --font-family: Ubuntu, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-size: 16px;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+main {
+  display: grid;
+  place-content: center;
+  background-color: var(--neutral-400);
+}
+
+.form {
+  max-width: 1040px;
+  background-color: var(--neutral-400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form__right {
+  width: 100%;
+  height: 160px;
+  margin: auto 0;
+  background-image: url(../assets/images/bg-sidebar-mobile.svg);
+  background-size: cover;
+}
+.form__right-steps-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(-30px);
+}
+.form__right-step-number {
+  display: grid;
+  place-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--neutral-100);
+  color: var(--neutral-100);
+  font-size: 0.85rem;
+  font-weight: var(--font-medium);
+  transition: background-color 150ms ease-in-out;
+}
+.form__right-step-number:hover, .form__right-step-number:focus, .form__right-step-number:focus-visible, .form__right-step-number:active {
+  background-color: var(--primary-100);
+  color: var(--primary-900);
+}
+.form__right-step-info {
+  display: none;
+}
+.form__left {
+  background-color: var(--neutral-100);
+  margin: 0 1rem;
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 500px;
+  min-width: 250px;
+  transform: translateY(-65px);
+  color: var(--primary-900);
+  box-shadow: 0 4px 15px 3px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.form__left-heading h1 {
+  font-size: 1.5rem;
+}
+.form__left-heading p {
+  color: var(--neutral-900);
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+.form__left-inputs {
+  display: flex;
+  flex-direction: column;
+}
+.form__left-inputs fieldset {
+  margin-top: 1rem;
+}
+.form__left-inputs fieldset:first-of-type {
+  margin: 0;
+}
+.form__left-inputs label,
+.form__left-inputs input {
+  display: block;
+  width: 100%;
+}
+.form__left-inputs label {
+  font-size: 0.8rem;
+  font-weight: var(--font-medium);
+}
+.form__left-inputs input {
+  border: 1px solid var(--neutral-900);
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: var(--font-bold);
+}
+.form__left-inputs input:hover, .form__left-inputs input:active, .form__left-inputs input:focus, .form__left-inputs input:focus-visible {
+  outline-color: var(--primary-400);
+}
+.form__left-inputs input::placeholder {
+  color: var(--neutral-900);
+}
+.form__left-inputs input[type=number]::-webkit-inner-spin-button,
+.form__left-inputs input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form__left-inputs button {
+  position: absolute;
+  bottom: -30%;
+  right: 0;
+}
+
+.btn {
+  font-weight: var(--font-medium);
+  padding: 7px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  transition: background-color 150ms ease-in-out;
+}
+.btn--primary {
+  background-color: var(--primary-900);
+  color: var(--neutral-100);
+}
+.btn--primary:hover, .btn--primary:focus, .btn--primary:focus-visible {
+  background-color: var(--primary-800);
+}
+
+/*
+Media Quires: 
+- Mobile: 375px
+- Desktop: 1440px
+*/
+@media screen and (min-width: 768px) {
+  main {
+    height: 100vh;
+  }
+  .btn {
+    font-weight: var(--font-medium);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  .form {
+    flex-direction: row;
+    height: 650px;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+    background-color: var(--neutral-100);
+  }
+  .form__right {
+    width: 300px;
+    height: 100%;
+    border-radius: 8px;
+    padding: 2rem;
+    background-image: url(../assets/images/bg-sidebar-desktop.svg);
+  }
+  .form__right-steps-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    transform: translateY(0);
+  }
+  .form__right-step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .form__right-step-info {
+    display: inline-block;
+    text-transform: uppercase;
+  }
+  .form__right-step-info h6 {
+    font-weight: var(--font-bold);
+    color: var(--neutral-900);
+  }
+  .form__right-step-info p {
+    font-weight: var(--font-bold);
+    color: var(--neutral-500);
+  }
+  .form__left {
+    background-color: none;
+    padding: 1.5rem 6rem;
+    margin: 0;
+    max-width: 100%;
+    min-width: 250px;
+    height: 100%;
+    transform: translateY(0);
+    color: var(--primary-900);
+    box-shadow: none;
+  }
+  .form__left-heading h1 {
+    font-size: 2rem;
+  }
+  .form__left-heading p {
+    padding-bottom: 2rem;
+  }
+  .form__left-inputs button {
+    position: inherit;
+    margin-top: 3rem;
+    align-self: flex-end;
+  }
+}
