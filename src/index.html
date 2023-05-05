@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Frontend Mentor | Multi-step form</title>
+</head>
+
+<body>
+    <main>
+        <div id="container" class="form">
+            <div class="form__right">
+
+                <div class="form__right-steps-wrapper">
+                    <div class="form__right-step">
+                        <div class="form__right-step-number">
+                            <p>1</p>
+                        </div>
+                        <div class="form__right-step-info">
+                            <h6>Step 1</h6>
+                            <p>Your Info</p>
+                        </div>
+                    </div>
+                    <div class="form__right-step">
+                        <div class="form__right-step-number">
+                            <p>2</p>
+                        </div>
+                        <div class="form__right-step-info">
+                            <h6>Step 2</h6>
+                            <p>Select Plan</p>
+                        </div>
+                    </div>
+                    <div class="form__right-step">
+                        <div class="form__right-step-number">
+                            <p>3</p>
+                        </div>
+                        <div class="form__right-step-info">
+                            <h6>Step 3</h6>
+                            <p>Add-ons</p>
+                        </div>
+                    </div>
+                    <div class="form__right-step">
+                        <div class="form__right-step-number">
+                            <p>4</p>
+                        </div>
+                        <div class="form__right-step-info">
+                            <h6>Step 4</h6>
+                            <p>Summary</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="form__left">
+                <div class="form__left-heading">
+                    <h1>Personal Info</h1>
+                    <p>Please provide your name, email address, and phone number</p>
+                </div>
+                <form class="form__left-inputs">
+                    <fieldset>
+                        <label for="name">Name</label>
+                        <input id="name" type="text" placeholder="e.g. Stephen King">
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email Address</label>
+                        <input id="email" type="email" placeholder="e.g. stephenking@lorem.com">
+                    </fieldset>
+                    <fieldset>
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="number" placeholder="e.g. +1 234 567 890">
+                    </fieldset>
+                    <button class="btn btn--primary" type="submit" role="submit">Next Step</button>
+
+                </form>
+
+            </div>
+        </div>
+    </main>
+</body>
+<script src="/js/script.js"></script>
+
+
+
+</html>
